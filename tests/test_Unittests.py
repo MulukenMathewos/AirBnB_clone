@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import unittest
 from my_module import MyClass, my_function
 
