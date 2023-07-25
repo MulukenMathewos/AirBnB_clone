@@ -1472,8 +1472,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create Place")
             testId = output.getvalue().strip()
-        testCmd = "update Place {} ".format(testId)
-        testCmd += "{'max_guest': 98})"
+        testCmd = "update Place {} max_guest 98".format(testId)
         self.assertFalse(HBNBCommand().onecmd(testCmd))
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
         self.assertEqual(98, test_dict["max_guest"])
@@ -1482,8 +1481,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create Place")
             testId = output.getvalue().strip()
-        testCmd = "update Place {} ".format(testId)
-        testCmd += "{'latitude': 9.8})"
+        testCmd = "update Place {} latitude 9.8".format(testId)
         self.assertFalse(HBNBCommand().onecmd(testCmd))
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
         self.assertEqual(9.8, test_dict["latitude"])
@@ -1492,8 +1490,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create Place")
             testId = output.getvalue().strip()
-        testCmd = "update Place {} ".format(testId)
-        testCmd += "{'latitude': 9.8})"
+        testCmd = "update Place {} latitude 9.8".format(testId)
         self.assertFalse(HBNBCommand().onecmd(testCmd))
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
         self.assertEqual(9.8, test_dict["latitude"])
