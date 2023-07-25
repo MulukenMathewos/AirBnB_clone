@@ -1474,7 +1474,7 @@ class TestHBNBCommand_update(unittest.TestCase):
             testId = output.getvalue().strip()
         testCmd = "update Place {} ".format(testId)
         testCmd += "{'max_guest': 98})"
-        HBNBCommand().onecmd(testCmd)
+        self.assertFalse(HBNBCommand().onecmd(testCmd))
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
         self.assertEqual(98, test_dict["max_guest"])
 
@@ -1484,7 +1484,7 @@ class TestHBNBCommand_update(unittest.TestCase):
             testId = output.getvalue().strip()
         testCmd = "update Place {} ".format(testId)
         testCmd += "{'latitude': 9.8})"
-        HBNBCommand().onecmd(testCmd)
+        self.assertFalse(HBNBCommand().onecmd(testCmd))
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
         self.assertEqual(9.8, test_dict["latitude"])
 
@@ -1494,7 +1494,7 @@ class TestHBNBCommand_update(unittest.TestCase):
             testId = output.getvalue().strip()
         testCmd = "update Place {} ".format(testId)
         testCmd += "{'latitude': 9.8})"
-        HBNBCommand().onecmd(testCmd)
+        self.assertFalse(HBNBCommand().onecmd(testCmd))
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
         self.assertEqual(9.8, test_dict["latitude"])
 
